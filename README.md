@@ -6,6 +6,7 @@ Tweet.
 ## How to run locally
 
 `npm install`
+
 `npm run dev`
 
 ## Environment Variables (.env)
@@ -13,6 +14,9 @@ Tweet.
 You will need to setup a .env file in the root directory with secret keys. The required variables are as follows:
 
 `TELEGRAM_API_ID=`
+
 `TELEGRAM_API_HASH=`
+
 `TELEGRAM_SERVER_IP=`
+
 `PHONE_NUMBER=`
