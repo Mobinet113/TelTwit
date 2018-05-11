@@ -3,11 +3,13 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/dist/app/app.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/fixtures.js" />
         <item url="file://$PROJECT_DIR$/dist/app/index.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/dist/app/app.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/fixtures.js" />
       <root url="file://$PROJECT_DIR$/dist/app/index.js" />
     </CLASSES>
     <SOURCES />
