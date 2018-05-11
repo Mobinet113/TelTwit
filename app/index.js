@@ -1,4 +1,10 @@
-require('dotenv').config();
+"use strict";
 
+import "babel-polyfill";
+import './app';
 
-console.log(process.env.TELEGRAM_API_ID);
+/*
+  Entry point for the app.
+
+  Necessary to load up the Babel polyfills before everything else.
+ */
