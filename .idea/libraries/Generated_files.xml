@@ -3,14 +3,27 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/dist/app/app.js" />
-        <item url="file://$PROJECT_DIR$/dist/app/fixtures.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/config/telegram.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/config/twitter.js" />
         <item url="file://$PROJECT_DIR$/dist/app/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/telegram/fixtures.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/telegram/init.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/telegram/login.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/twitter/tweet.js" />
+        <item url="file://$PROJECT_DIR$/dist/setup.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/dist/app/app.js" />
       <root url="file://$PROJECT_DIR$/dist/app/fixtures.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/app.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/config/telegram.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/config/twitter.js" />
       <root url="file://$PROJECT_DIR$/dist/app/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/telegram/fixtures.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/telegram/init.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/telegram/login.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/twitter/tweet.js" />
+      <root url="file://$PROJECT_DIR$/dist/setup.js" />
     </CLASSES>
     <SOURCES />
   </library>

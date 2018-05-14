@@ -1,43 +1,32 @@
-import MTProto from "telegram-mtproto";
-import { inputField } from './fixtures';
+import login from './telegram/login';
+import tweet from './twitter/tweet';
 
+init();
 
-const phone = {
-  num : '+447477693606',
-  code: '73281'
-};
+async function init(){
 
-const api = {
-  layer          : 57,
-  initConnection : 0x69796de9,
-  api_id         : 224240
-};
+  tweet('I am a Tweet!');
 
-const server = {
-  dev: true //We will connect to the test server.
-};          //Any empty configurations fields can just not be specified
+  //const {user} = await login();
 
-const client = MTProto({ server, api });
+  console.log(user);
+  //getChat();
 
-connect();
+}
 
-async function connect(){
-  const { phone_code_hash } = await client('auth.sendCode', {
-    phone_number  : phone.num,
-    current_number: false,
-    api_id        : api.api_id,
-    api_hash      : 'e2dbbd42f6e8d5db0d4b664bdf0e78db'
+async function getChat(){
+  console.log('Getting chats');
+
+  const dialogs = await telegram('messages.getDialogs', {
+    limit: 50,
   });
+  const { chats } = dialogs;
 
-  const code = await inputField('code');
+  console.log("All Chats: ", chats);
 
-  const { user } = await client('auth.signIn', {
-    phone_number   : phone.num,
-    phone_code_hash: phone_code_hash,
-    phone_code     : code
-  });
+  const selectedChat = await selectChat(chats);
 
-  console.log('signed as ', user)
+  console.log("Selected Chat: ", selectedChat);
 
 }
 
