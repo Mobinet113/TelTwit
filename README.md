@@ -16,14 +16,14 @@ After running, you should receive an authorisation code on the phone number you 
 
 You will need to setup a .env file in the root directory with secret keys. The required variables are as follows:
 
-`TELEGRAM_API_ID=` (required) Your Telegram App API ID
-`TELEGRAM_API_HASH=` (required) Your Telegram App hash
+`TELEGRAM_API_ID=` (required) Your Telegram App API ID\
+`TELEGRAM_API_HASH=` (required) Your Telegram App hash\
 
-`PHONE_NUMBER=+44` The phone number belonging to your Telegram Account
-`FIRST_NAME=John` Your first name if not already registered
-`LAST_NAME=Doe` Your last name if not already registered
+`PHONE_NUMBER=+44` The phone number belonging to your Telegram Account including country code (+44...)\
+`FIRST_NAME=John` Your first name if not already registered\
+`LAST_NAME=Doe` Your last name if not already registered\
 
-`TWITTER_API_KEY=` (required) Twitter API Key
-`TWITTER_API_SECRET=` (required) Twitter API secret
-`TWITTER_ACCESS_TOKEN_KEY=` (required) Twitter Access key
-`TWITTER_ACCESS_TOKEN_SECRET=` (required) Twitter access secret
+`TWITTER_API_KEY=` (required) Twitter API Key\
+`TWITTER_API_SECRET=` (required) Twitter API secret\
+`TWITTER_ACCESS_TOKEN_KEY=` (required) Twitter Access key\
+`TWITTER_ACCESS_TOKEN_SECRET=` (required) Twitter access secret\

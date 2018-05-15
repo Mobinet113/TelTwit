@@ -6,9 +6,12 @@
         <item url="file://$PROJECT_DIR$/dist/app/config/telegram.js" />
         <item url="file://$PROJECT_DIR$/dist/app/config/twitter.js" />
         <item url="file://$PROJECT_DIR$/dist/app/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/telegram/chat-history.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/telegram/chats.js" />
         <item url="file://$PROJECT_DIR$/dist/app/telegram/fixtures.js" />
         <item url="file://$PROJECT_DIR$/dist/app/telegram/init.js" />
         <item url="file://$PROJECT_DIR$/dist/app/telegram/login.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/telegram/user.js" />
         <item url="file://$PROJECT_DIR$/dist/app/twitter/tweet.js" />
         <item url="file://$PROJECT_DIR$/dist/setup.js" />
       </sourceFilesUrls>
@@ -19,9 +22,12 @@
       <root url="file://$PROJECT_DIR$/dist/app/config/telegram.js" />
       <root url="file://$PROJECT_DIR$/dist/app/config/twitter.js" />
       <root url="file://$PROJECT_DIR$/dist/app/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/telegram/chat-history.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/telegram/chats.js" />
       <root url="file://$PROJECT_DIR$/dist/app/telegram/fixtures.js" />
       <root url="file://$PROJECT_DIR$/dist/app/telegram/init.js" />
       <root url="file://$PROJECT_DIR$/dist/app/telegram/login.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/telegram/user.js" />
       <root url="file://$PROJECT_DIR$/dist/app/twitter/tweet.js" />
       <root url="file://$PROJECT_DIR$/dist/setup.js" />
     </CLASSES>

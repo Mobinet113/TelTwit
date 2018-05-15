@@ -2,7 +2,6 @@ import { inputField } from './fixtures';
 import { telegram, app } from './init';
 import {settings, api} from '../config/telegram';
 
-
 async function login(){
   
   console.log("Logging in to Telegram");
@@ -23,10 +22,14 @@ async function login(){
 
     const code = await inputField('code');
 
-
     if ( ! phone_registered) {
 
       console.log("User not found, registering new user from config details");
+
+      console.log("Phone Hash", phone_code_hash);
+      console.log("Phone Code", code);
+      console.log("First Name", settings.firstName);
+      console.log("Last Name", settings.lastName);
 
       const {user} = await telegram('auth.signUp', {
         phone_number    : settings.phone,
@@ -36,6 +39,8 @@ async function login(){
         last_name       : settings.lastName
       });
 
+      console.log('Account registered and signed as ', user);
+
     } else {
 
       const {user} = await telegram('auth.signIn', {
@@ -44,9 +49,10 @@ async function login(){
         phone_code        : code
       });
 
+      console.log('signed in as ', user);
     }
 
-    console.log('signed as ', user)
+    app.storage.set('signedin', true);
 
   } catch ( error ) {
 
