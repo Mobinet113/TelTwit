@@ -1,5 +1,6 @@
 import { twitterSettings } from '../config/twitter';
 import Twitter from 'twitter';
+import chalk from 'chalk';
 
 async function tweet(message){
 
@@ -10,12 +11,20 @@ async function tweet(message){
     access_token_secret: twitterSettings.access_secret
   });
 
+  console.log( chalk.blue( "Tweeting message: " ) );
+  console.log( message );
+
   client.post('statuses/update', {status: message}, function(error, tweet, response) {
     if (!error) {
-      console.log(tweet);
+      console.log( chalk.green( "Tweet successful!" ) );
+    } else {
+      console.log( chalk.red( "Twitter error: " + error ));
     }
   });
 
 }
 
 module.exports = tweet;
+
+
+// derek, ian white, Alastair

@@ -5,8 +5,10 @@
     "setup": "node setup.js"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "dotenv": "^5.0.1",
     "mtproto-storage-fs": "^0.3.1",
+    "nodemailer": "^4.6.4",
     "prompt": "^1.0.0",
     "ramda": "^0.25.0",
     "telegram-mtproto": "^2.2.2",

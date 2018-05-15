@@ -1,6 +1,7 @@
 const { pluck } = require('ramda');
 const { inputField } = require('./fixtures');
 import { telegram } from './init';
+import chalk from 'chalk';
 
 const getChat = async () => {
   const dialogs = await telegram('messages.getDialogs', {
@@ -14,10 +15,16 @@ const getChat = async () => {
   return selectedChat
 };
 
-const chatHistory = async ( chat, userID = 0 ) => {
+/**
+ *
+ * @param chat
+ * @param userID
+ * @param offset
+ * @param limit
+ * @returns {Promise<Array>}
+ */
+const chatHistory = async ( chat, userID = 0, offset = 0, limit = 100 ) => {
   const max = 400;
-  const limit = 100;
-  let offset = 0;
   let full = [],
     messages = [];
 
@@ -36,7 +43,14 @@ const chatHistory = async ( chat, userID = 0 ) => {
     messages = history.messages.filter(filterLastDay);
 
     // If a userID is provided, then we'll filter for messages from them
-    if ( userID > 0 ){
+    console.log("ID Type: " + typeof userID);
+
+    if ( typeof userID === 'object') {
+      console.log( chalk.blue( "Array of User IDs provided" ) );
+      messages = messages.filter(message => message.from_id === userID[0] );
+
+    } else if (userID > 0 ) {
+      console.log( chalk.blue( "User ID provided. Checking messages from " + userID ) );
       messages = messages.filter(message => message.from_id === userID);
     }
 
@@ -58,10 +72,10 @@ const dayRange = () => Date.now() - new Date(86400000*4);
 const selectChat = async (chats) => {
   const chatNames = pluck('title', chats);
 
-  console.log('Your chat list');
+  console.log( chalk.black.bgYellow( 'Your chat list' ) );
   chatNames.map((name, id) => console.log(`${id}  ${name}`));
 
-  console.log('Select chat by index');
+  console.log( chalk.yellow( 'Select chat by index') );
   const chatIndex = await inputField('index');
 
   return chats[+chatIndex]
