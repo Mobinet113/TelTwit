@@ -46,8 +46,18 @@ const chatHistory = async ( chat, userID = 0, offset = 0, limit = 100 ) => {
     console.log("ID Type: " + typeof userID);
 
     if ( typeof userID === 'object') {
-      console.log( chalk.blue( "Array of User IDs provided" ) );
-      messages = messages.filter(message => message.from_id === userID[0] );
+      console.log( chalk.blue( "Object of User IDs provided" ) );
+
+      // Construct an array of user IDs only
+      const usersIdArray = await Promise.all(userID.map( async ( user ) => {
+        return user.id;
+      }));
+
+      // Check if the message is from a target user
+      messages = await messages.filter( message => {
+        return usersIdArray.indexOf(message.from_id) > -1;
+      });
+
 
     } else if (userID > 0 ) {
       console.log( chalk.blue( "User ID provided. Checking messages from " + userID ) );
@@ -59,8 +69,6 @@ const chatHistory = async ( chat, userID = 0, offset = 0, limit = 100 ) => {
     messages.length > 0 && console.log(offset, messages[0].id)
 
   } while (messages.length === limit && full.length < max);
-
-  printMessages(full);
 
   return full
 };
@@ -79,28 +87,6 @@ const selectChat = async (chats) => {
   const chatIndex = await inputField('index');
 
   return chats[+chatIndex]
-};
-
-const filterUsersMessages = ({ _ }) => _ === 'message';
-
-
-const formatMessage = ({ message, date, from_id }) => {
-  const dt = new Date(date*1e3);
-  const hours = dt.getHours();
-  const mins = dt.getMinutes();
-
-  return `${hours}:${mins} [${from_id}] ${message}`
-};
-
-const printMessages = messages => {
-
-  const filteredMsg = messages.filter(filterUsersMessages);
-
-  const formatted = filteredMsg.map(formatMessage);
-
-  formatted.forEach(e => console.log(e));
-
-  return messages
 };
 
 const searchUsers = async (username) => {

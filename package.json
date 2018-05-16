@@ -5,6 +5,7 @@
     "setup": "node setup.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "chalk": "^2.4.1",
     "dotenv": "^5.0.1",
     "mtproto-storage-fs": "^0.3.1",

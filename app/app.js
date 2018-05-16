@@ -3,10 +3,15 @@ import { app } from './telegram/init';
 import login from './telegram/login';
 import chalk from 'chalk';
 import { getChat, chatHistory, searchUsers } from './telegram/chat-history';
-import { getUser } from './telegram/user';
-import {settings} from './config/telegram';
+import { settings } from './config/telegram';
+import { twitterSettings } from './config/twitter';
+import { mailSettings } from './config/mail';
+import { sendEmail } from './mail/mail';
+import { slackMessage } from './slack/slackMessage';
 
 let user;
+let targetUserDetails;
+let usersArray = [];
 
 init();
 
@@ -18,11 +23,6 @@ async function init(){
   } else {
     console.log( chalk.blue( "Already logged into Telegram" ) );
   }
-
-  // Get our own user Details and store them locally
-  const userDetails = await getUser(settings.username);
-  app.storage.set('userDetails', userDetails);
-  console.log( chalk.blue( "Logged in as " + userDetails.first_name ) );
 
   // Get our target chat group
   const chat = await getChat();
@@ -56,11 +56,12 @@ async function getUserIDs(){
     const usersIdMap = userNames.map( async ( name ) => {
 
       console.log( chalk.blue( "Getting User ID for " + name ) );
-      let targetUserDetails = await searchUsers(name);
+      targetUserDetails = await searchUsers(name);
 
       console.log( "ID: " + targetUserDetails.users[0].id );
+      usersArray[targetUserDetails.users[0].id] = name;
 
-      return targetUserDetails.users[0].id;
+      return {username: name, id: targetUserDetails.users[0].id};
 
     });
 
@@ -79,20 +80,31 @@ async function processMessageHistory(messages) {
 
   let lastMessageId = await lastMsgId();
 
-  messages.map( message => {
+  const compiledMessages = await Promise.all(messages.map( async message => {
 
     let text = message.message;
     let id   = message.id;
     let date = message.date;
-
-    console.log( `[${id}] ${text}` );
+    let name = usersArray[message.from_id];
 
     if ( typeof lastMessageId === 'undefined' || id > lastMessageId ) {
-      //tweet(text);
+
+      if ( twitterSettings.enable ) {
+        tweet(text);
+      }
 
       app.storage.set('lastMessageId', id);
     }
-  });
+
+    return {
+      text  : text,
+      id    : id,
+      date  : date,
+      name  : name
+    };
+  }));
+
+  await slackMessage(compiledMessages);
 
 }
 

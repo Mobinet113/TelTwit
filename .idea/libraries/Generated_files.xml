@@ -5,10 +5,13 @@
         <item url="file://$PROJECT_DIR$/dist/app/app.js" />
         <item url="file://$PROJECT_DIR$/dist/app/config/console.js" />
         <item url="file://$PROJECT_DIR$/dist/app/config/mail.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/config/slack.js" />
         <item url="file://$PROJECT_DIR$/dist/app/config/telegram.js" />
         <item url="file://$PROJECT_DIR$/dist/app/config/twitter.js" />
         <item url="file://$PROJECT_DIR$/dist/app/index.js" />
         <item url="file://$PROJECT_DIR$/dist/app/mail/mail.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/slack/message.js" />
+        <item url="file://$PROJECT_DIR$/dist/app/slack/slackMessage.js" />
         <item url="file://$PROJECT_DIR$/dist/app/telegram/chat-history.js" />
         <item url="file://$PROJECT_DIR$/dist/app/telegram/chats.js" />
         <item url="file://$PROJECT_DIR$/dist/app/telegram/fixtures.js" />
@@ -24,10 +27,13 @@
       <root url="file://$PROJECT_DIR$/dist/app/app.js" />
       <root url="file://$PROJECT_DIR$/dist/app/config/console.js" />
       <root url="file://$PROJECT_DIR$/dist/app/config/mail.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/config/slack.js" />
       <root url="file://$PROJECT_DIR$/dist/app/config/telegram.js" />
       <root url="file://$PROJECT_DIR$/dist/app/config/twitter.js" />
       <root url="file://$PROJECT_DIR$/dist/app/index.js" />
       <root url="file://$PROJECT_DIR$/dist/app/mail/mail.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/slack/message.js" />
+      <root url="file://$PROJECT_DIR$/dist/app/slack/slackMessage.js" />
       <root url="file://$PROJECT_DIR$/dist/app/telegram/chat-history.js" />
       <root url="file://$PROJECT_DIR$/dist/app/telegram/chats.js" />
       <root url="file://$PROJECT_DIR$/dist/app/telegram/fixtures.js" />
