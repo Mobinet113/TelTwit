@@ -106,6 +106,7 @@ async function processMessageHistory(messages) {
   if ( slackSettings.enable ) {
     await slackMessage(compiledMessages);
   }
+
 }
 
 const lastMsgId = async () => {

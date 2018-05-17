@@ -1,5 +1,5 @@
-const { pluck } = require('ramda');
-const { inputField } = require('./fixtures');
+import { pluck } from 'ramda';
+import { inputField } from './fixtures';
 import { telegram } from './init';
 import chalk from 'chalk';
 
@@ -16,7 +16,7 @@ const getChat = async () => {
 };
 
 /**
- *
+ * Retrieves the chat history from a channel
  * @param chat
  * @param userID
  * @param offset

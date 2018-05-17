@@ -28,8 +28,6 @@ async function login(){
 
       console.log( chalk.blue( "User not found, registering new user from config details" ) );
 
-      console.log("Phone Hash", phone_code_hash);
-      console.log("Phone Code", code);
       console.log("First Name", settings.firstName);
       console.log("Last Name", settings.lastName);
 

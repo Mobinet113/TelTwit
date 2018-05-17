@@ -1,7 +1,20 @@
 {
+  "name": "teltwit-announcer",
+  "version": "1.0.0",
+  "description": "Hooks into the Telegram API and listens for channel messages from a specific list of users to Tweet or Slack message.",
+  "author": "Benjamin Roffe",
+  "license": "GNU General Public License",
+  "engines": {
+    "npm": ">=5.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mobinet113/TelTwit-Announcer"
+  },
+
   "scripts": {
     "start": "node -r dotenv/config dist/index.js",
-    "dev": "node -r dotenv/config dist/index.js",
+    "dev": "npm run setup && node -r dotenv/config dist/index.js",
     "setup": "node setup.js && npx babel app --out-dir dist --source-maps"
   },
   "dependencies": {
