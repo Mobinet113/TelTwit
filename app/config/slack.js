@@ -1,5 +1,5 @@
 const slackSettings = {
-  enable      : true,
+  enable      : false,
   apiEndpoint : process.env.SLACK_API_ENDPOINT
 };
 

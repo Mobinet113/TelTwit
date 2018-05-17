@@ -23,10 +23,12 @@ const getChat = async () => {
  * @param limit
  * @returns {Promise<Array>}
  */
-const chatHistory = async ( chat, userID = 0, offset = 0, limit = 10000 ) => {
+const chatHistory = async ( chat, userID = 0, offset = 0, limit = 20000 ) => {
   const max = 400;
   let full = [],
     messages = [];
+
+  console.log( chalk.red( "Last ID: " + offset ) );
 
   do {
     const history = await telegram('messages.getHistory', {
@@ -35,9 +37,8 @@ const chatHistory = async ( chat, userID = 0, offset = 0, limit = 10000 ) => {
         channel_id : chat.id,
         access_hash: chat.access_hash
       },
-      max_id: offset,
-      offset: -full.length,
-      limit
+      min_id: offset,
+      limit: limit
     });
 
     messages = history.messages;

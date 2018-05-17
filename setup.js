@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const fs = require('fs');
 
 if ( fs.existsSync('.env')) {
-  console.log( chalk.blue('.env file already exists') );
+  console.log( chalk.blue('.env already exists') );
 
 } else {
   console.log( chalk.blue('Creating .env file from .sample-env') );

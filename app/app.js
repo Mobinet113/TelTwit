@@ -32,13 +32,14 @@ async function init(){
   console.log("Target User Details: ", targetUserID);
 
   // Get and process the message history
-  let offset = await lastMsgId();
-  console.log(chalk.red("Last Message ID: " + offset ));
+  let lastMessageID = await lastMsgId();
 
-  let messageHistory = await chatHistory(chat, targetUserID, offset);
+  console.log(chalk.red("Last Message ID: " + lastMessageID ));
+
+  let messageHistory = await chatHistory(chat, targetUserID, lastMessageID);
 
   if ( messageHistory.length > 0 ) {
-    await processMessageHistory(messageHistory);
+    await processMessageHistory(messageHistory, lastMessageID);
   } else {
     console.log( chalk.red( "No messages to process" ) );
   }
@@ -73,25 +74,29 @@ async function getUserIDs(){
 
 }
 
-async function processMessageHistory(messages) {
+async function processMessageHistory(messages, lastMessageID = 0) {
 
   console.log( chalk.blue( "Processing Telegram Messages" ) );
 
-  let lastMessageId = await lastMsgId();
 
   const compiledMessages = await Promise.all(messages.map( async message => {
 
-    let text = message.message;
-    let id   = message.id;
-    let date = message.date;
-    let name = usersArray[message.from_id];
+    let text      = message.message;
+    let entities  = message.entities;
+    let id        = message.id;
+    let date      = message.date;
+    let name      = usersArray[message.from_id];
 
-    if ( typeof lastMessageId === 'undefined' || id > lastMessageId ) {
+    console.log( `[${id}] [${name}] ${text}` );
+
+    if ( id > lastMessageID ) {
 
       if ( twitterSettings.enable ) {
         tweet(text);
       }
 
+      console.log( chalk.blue( "Updating storage ID to: " + id + " from " + lastMessageID ) );
+      lastMessageID = id;
       app.storage.set('lastMessageId', id);
     }
 
@@ -113,9 +118,11 @@ const lastMsgId = async () => {
   let lastMsgId = await app.storage.get('lastMessageId');
 
   if ( typeof lastMsgId === 'undefined' ){
-    await app.storage.get('lastMessageId', 0);
+    await app.storage.set('lastMessageId', 0);
     lastMsgId = 0;
   }
+
+  console.log( chalk.green(lastMsgId) );
 
   return lastMsgId;
 };

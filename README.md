@@ -1,4 +1,4 @@
-# TelTwit Announcer
+# TelTwit
 
 TelTwit Announcer simply hooks into the Telegram API and listens for channel messages from a specific list of users to
 Tweet or send Slack messages.
