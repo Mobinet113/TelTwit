@@ -8,7 +8,7 @@ Tweet or send Slack messages.
 ## Setup
 
 1. `npm install`
-2. `npm run setup` to create the .env file and the compile JS
+2. `npm run build` to create the .env file and the compile JS
 3. Edit the .env file with required API keys, and your Telegram account phone number (Settings explained below)
 4. `npm run start`
 
@@ -58,4 +58,7 @@ you want to collect messages from.
 
 
 ## License
+
+The project is released under the [MIT License](LICENSE)
+
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMobinet113%2FTelTwit.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMobinet113%2FTelTwit?ref=badge_large)
