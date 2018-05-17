@@ -53,3 +53,7 @@ the Telegram authorisation code you receive via SMS into the command line.
 
 Once the script is authorised, you will be presented with a list of available chats. Input the index number of the chat
 you want to collect messages from.
+
+## License
+
+The project is released under the [GNU General Public License v2.0](blob/master/LICENSE)
