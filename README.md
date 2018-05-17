@@ -28,19 +28,19 @@ To enable Slack messaging from Telegram messages:
 
 You will need to setup a .env file in the root directory with secret keys. The required variables are as follows:
 
-1. Telegram Details (Required)
+##### Telegram Details (Required)
 `TELEGRAM_API_ID=` (required) Your Telegram App API ID\
 `TELEGRAM_API_HASH=` (required) Your Telegram App hash\
-`TELEGRAM_USERNAME=MyUsername` Your own Telegram username
+`TELEGRAM_USERNAME=MyUsername` Your own Telegram username\
 `TELEGRAM_TARGET_USERNAME=username1,username2` The usernames of people you want to grab messages from, seperated only by commas\
 `PHONE_NUMBER=` The phone number belonging to your Telegram Account including country code (+44...)\
 `FIRST_NAME=John` Your first name if not already registered\
 `LAST_NAME=Doe` Your last name if not already registered\
 
-* Slack API Details
+##### Slack API Details
 `SLACK_API_ENDPOINT=` The Slack API Endpoint generated here: <https://api.slack.com/>
 
-* Twitter API Details
+##### Twitter API Details
 `TWITTER_API_KEY=` Twitter API Key\
 `TWITTER_API_SECRET=` Twitter API secret\
 `TWITTER_ACCESS_TOKEN_KEY=` Twitter Access key\
