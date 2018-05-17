@@ -1,4 +1,6 @@
 # TelTwit
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMobinet113%2FTelTwit.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMobinet113%2FTelTwit?ref=badge_shield)
+
 
 TelTwit Announcer simply hooks into the Telegram API and listens for channel messages from a specific list of users to
 Tweet or send Slack messages.
@@ -53,3 +55,7 @@ the Telegram authorisation code you receive via SMS into the command line.
 
 Once the script is authorised, you will be presented with a list of available chats. Input the index number of the chat
 you want to collect messages from.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMobinet113%2FTelTwit.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMobinet113%2FTelTwit?ref=badge_large)
