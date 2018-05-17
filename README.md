@@ -56,4 +56,4 @@ you want to collect messages from.
 
 ## License
 
-The project is released under the [GNU General Public License v2.0](LICENSE)
+The project is released under the [MIT License](LICENSE)
