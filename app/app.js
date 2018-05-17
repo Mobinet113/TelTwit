@@ -5,8 +5,6 @@ import chalk from 'chalk';
 import { getChat, chatHistory, searchUsers } from './telegram/chat-history';
 import { settings } from './config/telegram';
 import { twitterSettings } from './config/twitter';
-import { mailSettings } from './config/mail';
-import { sendEmail } from './mail/mail';
 import { slackMessage } from './slack/slackMessage';
 
 let user;
