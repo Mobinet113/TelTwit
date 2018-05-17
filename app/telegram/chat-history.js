@@ -23,7 +23,7 @@ const getChat = async () => {
  * @param limit
  * @returns {Promise<Array>}
  */
-const chatHistory = async ( chat, userID = 0, offset = 0, limit = 100 ) => {
+const chatHistory = async ( chat, userID = 0, offset = 0, limit = 10000 ) => {
   const max = 400;
   let full = [],
     messages = [];
@@ -40,7 +40,7 @@ const chatHistory = async ( chat, userID = 0, offset = 0, limit = 100 ) => {
       limit
     });
 
-    messages = history.messages.filter(filterLastDay);
+    messages = history.messages;
 
     // If a userID is provided, then we'll filter for messages from them
     console.log("ID Type: " + typeof userID);

@@ -5,7 +5,6 @@ const settings = {
   api_hash        : process.env.TELEGRAM_API_HASH,
   username        : process.env.TELEGRAM_USERNAME,
   targetUsername  : process.env.TELEGRAM_TARGET_USERNAME,
-  group           : ''
 };
 
 const api = {

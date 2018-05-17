@@ -6,6 +6,7 @@ import { getChat, chatHistory, searchUsers } from './telegram/chat-history';
 import { settings } from './config/telegram';
 import { twitterSettings } from './config/twitter';
 import { slackMessage } from './slack/slackMessage';
+import { slackSettings } from './config/slack';
 
 let user;
 let targetUserDetails;
@@ -102,8 +103,9 @@ async function processMessageHistory(messages) {
     };
   }));
 
-  await slackMessage(compiledMessages);
-
+  if ( slackSettings.enable ) {
+    await slackMessage(compiledMessages);
+  }
 }
 
 const lastMsgId = async () => {
