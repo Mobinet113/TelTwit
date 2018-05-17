@@ -6,7 +6,7 @@ Tweet or send Slack messages.
 ## Setup
 
 1. `npm install`
-2. `npm run setup` to create the .env file and the compile JS
+2. `npm run build` to create the .env file and the compile JS
 3. Edit the .env file with required API keys, and your Telegram account phone number (Settings explained below)
 4. `npm run start`
 
