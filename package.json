@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Hooks into the Telegram API and listens for channel messages from a specific list of users to Tweet or Slack message.",
   "author": "Benjamin Roffe",
-  "license": "GNU General Public License",
+  "license": "MIT",
   "readme": "README.md",
   "engines": {
     "npm": ">=5.6"
