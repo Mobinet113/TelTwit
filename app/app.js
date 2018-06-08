@@ -44,6 +44,8 @@ async function init(){
     console.log( chalk.red( "No messages to process" ) );
   }
 
+  process.exit();
+
 }
 
 async function getUserIDs(){
