@@ -19,7 +19,7 @@
     "build": "node setup.js && npx babel app --out-dir dist --source-maps"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chalk": "^2.4.1",
     "dotenv": "^5.0.1",
     "mtproto-storage-fs": "^0.3.1",
